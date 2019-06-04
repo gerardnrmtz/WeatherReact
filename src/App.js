@@ -7,6 +7,7 @@ import {Grid,Row,Col} from 'react-flexbox-grid';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 import './App.css';
 import LocationList from './Components/LocationList';
+import ForecastExtended from './Components/ForecastExtended';
 const cities=[
 'Torreon,MX',
 'Washington,us',
@@ -22,10 +23,17 @@ const theme=createMuiTheme({
 });
 // es un objeto de tipo class component
 class  App extends Component {
+  constructor(){
+    super();
+    this.state={city:null}
+  }
   handleSelectedLocation=city =>{
+
+    this.setState({city});
     console.log("handleSelectionLocation "+city);
   };
   render(){
+    const {city}=this.state;
     return (
       <Grid>
         <Row>
@@ -44,7 +52,12 @@ class  App extends Component {
           <Col xs={12} ms={6} lg={6}>
           <Paper>
           <div className="details">
-            </div>
+            {
+              city &&
+            <ForecastExtended city={city}/>
+            }
+            
+          </div>
             </Paper>
           </Col>
         </Row>

@@ -6,7 +6,6 @@ import transformWeather from './../../Services/transformWeather';
 import Location from './Location'
 import WeatherData from './WeatherData'
 import './styles.css'
-import { resolve } from 'q';
 //se le llama un compontente funcional 
 //cuando necesitamos instancias del ciclo de vida de react
 class WeatherLocation extends Component{

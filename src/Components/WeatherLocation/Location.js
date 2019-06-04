@@ -1,7 +1,5 @@
 import React from 'react';
-import { debug } from 'util';
 import PropTypes from 'prop-types';
-import { strict } from 'assert';
 import './styles.css'
 const Location=({city})=>(
     //Destructuring
